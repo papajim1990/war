@@ -1,0 +1,721 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 7, 2017, 12:21:50 AM
+    Author     : user1
+*/
+
+.sort_option_list_down{
+    width: 100%;
+    list-style: none;
+    margin: 0px;
+    padding: 0;
+}
+.sort_option_list_down li{
+    
+    background: lightcoral;
+    text-align: center;
+    color:white;
+    padding: 10px;
+    font-size: 1.2em;
+}
+.sort_option_avoid{
+    
+}
+.brand-box{
+   margin: 5px;
+    color: #4267b2;
+    width: 100%;
+    border: 2px solid #4267b2;
+    border-radius: 10px;
+    background: #fff;
+}
+.brand-box i{
+    font-size: 2em;
+}
+.brand-box h4{
+    font-size: 2em;
+    margin:0px;
+    padding:8px;
+}
+.brand-box-red{
+      margin: 5px;
+    color: hsl(0, 100%, 50%);
+    width: 100%;
+    border: 2px solid hsl(0, 100%, 50%);
+    border-radius: 10px;
+    background: #fff;
+}
+.brand-box-red i{
+    font-size: 2em;
+}
+.brand-box-red h4{
+    font-size: 2em;
+    margin:0px;
+    padding:8px;
+}
+.signup{
+    margin: 8px;
+    padding: 4px;
+}
+.login{
+    margin: 8px;
+    padding: 4px;
+}
+#logout-button{
+    margin: 8px;
+    padding: 4px;
+}
+.event-block{
+    padding: 10px;
+    margin :5px;
+    
+}
+.content-description-event{
+    font-size: 1.3em;
+   
+}
+.date-event{
+    padding-bottom:5px;
+    font-size: 1.2em;
+    
+}
+.button-mini button{
+    background: transparent;
+    border: none;
+    
+    width: 100%;
+    padding: 25px;
+    border-top: 2px solid;
+    font-size: 1em;
+
+}
+.rem button{
+        background: transparent;
+    border: none;
+    border-bottom: 2px solid;
+    width: 100%;
+    padding: 25px;
+    border-top: 2px solid;
+    font-size: 1.2em;
+
+}
+.margin-form{
+        margin: 30px;
+}
+.login-message{
+    !importand font-size: 30px; 
+}
+#mapforevents{
+    width:  100%;height:  500px;
+}
+.option-panel-sort{
+    padding: 20px;
+    border:2px solid ;
+    font-size: 1.3em;
+        background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+           overflow-x: hidden;
+    overflow-y: auto;
+
+     max-height: 50%;
+    min-height: 50%;
+}
+.option-panel-sort ul{
+list-style: none;
+
+}
+.option-panel-sort li{
+cursor:pointer;
+    padding: 5px;
+    
+    margin-bottom: 0.5rem;
+}
+.option-panel-sort li span:first-child{
+border-bottom: 1px solid rgba(0,0,0,.125);
+border-right: 1px solid rgba(0,0,0,.125);
+padding-right: 5px;
+  
+    border-radius: .25rem;
+}
+#select-listlocation input{
+    border: none;
+    background: transparent;
+    
+}
+#container-1-options label::after{
+    
+}
+.check {
+  stroke-dasharray: 130px 130px;
+  stroke-dashoffset: 130px;
+  -webkit-transition: stroke-dashoffset 4.1s linear 0s;
+  transition: stroke-dashoffset 500ms ease-in-out;
+}
+.uncheck {
+  stroke-dasharray: 130px 130px;
+  stroke-dashoffset: 0px;
+  -webkit-transition: stroke-dashoffset 4.1s linear 0s;
+  transition: stroke-dashoffset 500ms ease-in-out;
+}
+#select-sort-option-container{
+    display:none;
+}
+.option-checker{
+    display:none;
+}
+.border{
+    border: 1px solid black;
+    background-color: #EAFAF1     !important;
+    
+    color: #D5F5E3;
+    height: 20px;
+}
+.label-sort{
+transition: color 1s ease;
+  color: black;
+}
+.underline-border{
+    width: 0px;
+    height: 3px;
+    background-color: #239B56;
+    transition: width 1s ease;
+}
+.div-container-sort{
+    padding: 5px;
+    -webkit-transition: all 0.3s ease-out;
+-moz-transition: all 0.7s ease;
+-o-transition: all 0.7s ease;
+transition: all 0.7s ease;
+}
+.sort_option_list_down li{
+    padding: 0px;
+    margin:0px;
+    
+}
+.sort_option_list_down li button{
+    padding:10px;
+    width: 100%;
+
+    border:1px solid rgba(0,0,0,.125);
+    color:#fff3cd;
+    background: #343a40;
+}
+.pager-revies{
+ 
+}
+.topics-ul-container{
+    list-style: none;
+    margin:0px;
+    padding:0px;
+}
+.topics-ul-container li{
+    float:left;
+    padding: 5px;
+}
+.topic-div-container-negative{
+
+border: 1px solid rgba(0,0,0,.125);
+padding: 5px;
+}
+.topic-div-container-negative::before{
+    
+    content: "-";
+    color: red;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.topic-div-container-positive{
+
+border: 1px solid rgba(0,0,0,.125);
+padding: 5px;
+}
+.topic-div-container-positive::before{
+    
+    content: "+";
+    color: greenyellow;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.topic-div-container-neutral{
+
+border: 1px solid rgba(0,0,0,.125);
+padding: 5px;
+}
+.topic-div-container-neutral::before{
+    
+    content: " ";
+    color: yellow;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.review-score-badge-badge{
+    padding: 5px;
+    font-size: 1.4em;
+    
+}
+#loading-reviews-gif{
+    width:100%;
+}
+.review_item_review_content i{
+    font-size: 18px;
+    
+        position: absolute;
+    left: 0;
+}
+.review_item_review_content .review_neg i{
+    color:#d7d7d7;
+}
+.review_item_review_content .review_pos i{
+    color:#0ab21b;
+}
+.inline-block{
+    !importand display: inline-block;
+}
+.review-list-topic-link{
+        color: inherit;
+    text-decoration: none;
+    font-weight: 100;
+    padding:  5px;
+}
+.disabled-button{
+    background: transparent;
+    border:none;
+    width: 100%;
+        color: #838383;
+    font-weight: bold;
+}
+.checkboxes-aspects-filter{
+    display: none;
+}
+#aspexts-criteria-form{
+        display: unset;
+}
+.canvasjs-chart-credit{display: none}
+.full-lenght{
+    display: block;
+    max-width: 100%;
+}
+.loading-gif{
+    width: 100%;
+    height: inherit;
+}
+.tab-link-noncss{
+    text-decoration: none;
+    color: rgb(56, 56, 56);
+
+}
+.card-header{
+    background: none;
+}
+.Clicked-link-blue{
+    background: #07c;
+    
+}
+.Clicked-link-blue a{
+     color: #fff !important;
+    text-decoration: none;
+    
+}
+.button-events button{
+    width: 100%;
+    padding: 20px;
+    font-size: 1.4em;
+    color: #fff;
+    background: #07c;
+    border-radius: 0px 0px 10px 15px;
+}
+#Fb-events-container{
+border: 2px solid rgba(0,0,0,.125);
+padding: 5px;
+  display: none;
+    border-radius: .25rem;
+    width:100%;
+}
+.higlighted-sentence{
+    background:  yellow;
+    text-decoration: underline;
+}
+.positive-value{
+    color: green;
+}
+.negative-value{
+    color:red;
+}
+.tree, .tree ul {
+    margin:0;
+    padding:0;
+    list-style:none
+}
+.tree ul {
+    margin-left:1em;
+    position:relative
+}
+.tree ul ul {
+    margin-left:.5em
+}
+.tree ul:before {
+    content:"";
+    display:block;
+    width:0;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    border-left:1px solid
+}
+.tree li {
+    margin:0;
+    padding:0 1em;
+    line-height:2em;
+    
+    font-weight:700;
+    position:relative
+}
+.tree ul li:before {
+    content:"";
+    display:block;
+    width:10px;
+    height:0;
+    border-top:1px solid;
+    margin-top:-1px;
+    position:absolute;
+        top: 15px;
+    left:0
+}
+.tree ul li:last-child:before {
+    background:#fff;
+    height:auto;
+    top:1em;
+    bottom:0
+}
+.indicator {
+    margin-right:5px;
+}
+.tree li a {
+    text-decoration: none;
+    color:#369;
+    cursor:pointer;
+    font-size: 1.3em;
+}
+.tree li button, .tree li button:active, .tree li button:focus {
+    text-decoration: none;
+    color:#369;
+    border:none;
+    background:transparent;
+    margin:0px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+    outline: 0;
+}
+#locals-commnets-container{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.reviews-sorting__label{
+       /* margin-left: 3px; */
+    margin-right: 0;
+    position: relative;
+    padding: 4px;
+    display: inline-block;
+    margin-right: 3px;
+    margin-bottom: 5px;
+    cursor: pointer;
+   border: 1px solid rgba(0,0,0,.125);
+transition: background-color 0.5s ease,
+              color 0.5s linear,border-color 0.5s ease;
+    border-radius: 10px;
+}
+.selected-highl{
+      background-color: rgb(0, 53, 128); 
+     color: rgb(255, 255, 255); 
+        border-color: deepskyblue;
+}
+.reviews-sorting__title {
+    display: block;
+    padding-bottom: 8px;
+}
+.reviews-sorting__row:last-child {
+    border-top: 1px dotted #cdcdcd;
+    margin-top: 6px;
+    padding-top: 8px;
+}
+.review_list_block.one_col .review_list_container {
+    width: 100%;
+}
+.review_list_block.one_col .review_list_container {
+    margin-bottom: 25px!important;
+}
+.review-list--clean.review_list_container, .review-list--clean .featured_review_item, .review-list--clean .review-tab-other-properties .next-property, .review-list--clean .review-tab-other-properties .prev-property, .lang_is_rtl .review-list--clean .featured_review_item {
+    background: #fff;
+}
+.review_list_container {
+    background: #e9f0fa;
+    float: left;
+    width: 70%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.review_list_block {
+    font-size: 13px;
+}
+.reviews-sorting__input{
+    
+    position: relative;
+    top: 2px;
+}
+input[type=range] {
+    /*removes default webkit styles*/
+    -webkit-appearance: none;
+    
+    /*fix for FF unable to apply focus style bug */
+    border: 1px solid white;
+    
+    /*required for proper track sizing in FF*/
+    width: 100%;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
+    margin-top: -4px;
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
+}
+
+/*hide the outline behind the border*/
+input[type=range]:-moz-focusring{
+    outline: 1px solid white;
+    outline-offset: -1px;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 5px;
+    
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+    
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+    background: #777;
+    border-radius: 10px;
+}
+input[type=range]::-ms-fill-upper {
+    background: #ddd;
+    border-radius: 10px;
+}
+input[type=range]::-ms-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
+}
+input[type=range]:focus::-ms-fill-lower {
+    background: #888;
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: #ccc;
+}
+.input-range-css{
+  width: 100%;
+    border: 1px solid rgba(0,0,0,.125);
+
+    border-radius: 10px;
+}
+::-webkit-scrollbar {
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+.modalpagebody {
+     /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+ height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    
+    overflow-y: hidden;
+    transition: 0.5s;
+    background: url('6.-p.gr-assets.com_.gif') 
+                100% 100%;
+    background-repeat: no-repeat;
+}
+.block-header-criteria{
+       width: 100%;
+    background: #ffc107;
+    border: 2px solid navajowhite;
+    border-radius: 5px;
+    padding-top: 15px;
+}
+.block-header-criteria h3{
+    border-bottom:  1px solid #c6c6c6;
+        padding-bottom: 15px;
+}
+.choises-panel ul{
+    list-style: none;
+    margin: 10px;
+    padding: 0px;
+    
+}
+.choises-panel ul li{
+font-size: 1.4em;
+padding: 5px;
+
+    text-align:left;
+       
+        color: #654321;
+}
+.block-header-criteria button.sort_option_avoid{
+       width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    background: #07c;
+    color: #fff;
+    margin: 0px;
+    border: 1px solid white;
+        
+}
+.aspect-li{
+    border-bottom: 1px solid black;
+}
+.range-li{
+     border-bottom: 1px solid black;
+}
+.aspect-li:before{
+      content: " \2713\0020";
+    padding-left: 3px;
+    /* position: relative; */
+    border-bottom: 1px solid green;
+}
+.box-top-5 div{
+    font-size: 1.2em;
+    
+    margin-bottom: 5px;
+    margin-top: 5px;
+    
+}
+.box-top-5 h3{
+    font-size: 1.5em;
+    border-bottom: 2px solid #ddd;
+    color:#555;
+    padding-bottom: 5px;
+}
+.box-top-5{
+    margin-top: 10px;
+    margin-bottom: 10px;
+        background: 0;
+    border-radius: 3px;
+    border: 1px solid #07c;
+        padding: 5px;
+}
+.picked-div{
+    background: yellow;
+}
+.sort_option_avoid_delete{
+      width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    background: #e21111;
+    color: #fff;
+    margin: 0px;
+    border: 1px solid white;
+}
+#myInput{
+        margin-bottom: 15px;
+    margin-top: 15px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    width: 50%;
+    transition: width 1s ease;
+    padding: 5px;
+}
+#myInput:focus{
+    border: none;
+    outline-width: 0;
+    border-bottom: 1px solid #239B56;
+    width: 90%;
+}
+.card-trans{
+    width: 100%;
+    height:inherit;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease ;
+    transition: all 1s ease;
+}
+.search-input-modal input{
+    width: 40%;
+    height: 4%;
+    padding: 3px;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    transition: width 1s ease;
+}
+.search-input-modal input:focus{
+    border: none;
+    outline-width: 0;
+    border-bottom: 1px solid #239B56;
+    width: 90%;
+    
+}
