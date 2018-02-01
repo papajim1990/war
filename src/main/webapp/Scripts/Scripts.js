@@ -13,6 +13,14 @@ var help;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+function SelectAllOptions(){
+    $(".option-checker").each(function () {
+        if($(this).prop("checked")==false){
+    $(this).trigger("change");
+    $(this).prop("checked",true);
+        }
+});
+}
 function defaultActionAjax(data) {
     var results = data;
     var hotel = results.Hotel;
@@ -1416,7 +1424,7 @@ $(document).ready(function () {
             '</form></ul></div></div>' + '<div data-et-view="adUAAEGeCaHQDSWLBebaPNfELT:1"></div>' +
             '<ul id="reviews-reviews-reviews" class="review_list" data-et-view="adUAVGPRALTQcJC:9 bLTLcLcJUVZAQfTbaebaFFae:1 ">' + ''
             + '</ul>' + '</div>' + '</div>');
-    alert(window.location.href);
+   // alert(window.location.href);
 
     $.ajax({
         type: "GET",
@@ -1955,6 +1963,10 @@ $(document).ready(function () {
 
     }
     $(document).ready(function () {
+        $(".sr_item").removeClass("card_elevation");
+        $(".sr_item").removeClass("card_elevation_clickable");
+        $(".sr_item").removeClass("card_elevation_nodebounce");
+        $(".sr_item").removeClass("card_elevation_hover");
         $(".seac-bar-modal").keyup(function(){
             mySearchModal($(this).attr("id").split("-")[1]);
         });
@@ -1976,7 +1988,7 @@ $(document).ready(function () {
 
         //////////
 
-        $("#select-sort-option-container").parent().append("<form action='Home?action=SortOnReviews' method='post' id='form-sort-results'><div class='row'><div class='col-sm-6' ><div class='option-panel-sort' id='container-1-options'><div style='display:block' class=\"alert alert-info\"><strong>Select one or more from the options available !</strong></div><input type=\"text\" id=\"myInput\" onkeyup=\"searchaspectsbox()\" placeholder=\"Search for aspects..\"></div></div><div class='col-sm-6'><div class='option-panel-sort' id='container-2-options'><div id='sort-option-info-panel' style='display:block' class=\"alert alert-info\"><strong>You can also sort your picks by the weigth of importance</strong></div><ul></ul></div></div></div><div class='row'><div style='margin-bottom:0px;' class=\"col-sm-12\"><button type=\"submit\" style='width: 100%;height: 5%;' class=\"btn btn-primary\">Sort The Results</button></div></div></form>");
+        $("#select-sort-option-container").parent().append("<form action='Home?action=SortOnReviews' method='post' id='form-sort-results'><div class='row'><div class='col-sm-6' ><div class='option-panel-sort' id='container-1-options'><div style='display:block' class=\"alert alert-info\"><strong>Select one or more from the options available !</strong></div><div><input type=\"text\" id=\"myInput\" onkeyup=\"searchaspectsbox()\" placeholder=\"Search for aspects..\"></div><div><input type='button' class='btn btn-primary'value='Select All' onclick='SelectAllOptions();'></div></div></div><div class='col-sm-6'><div class='option-panel-sort' id='container-2-options'><div id='sort-option-info-panel' style='display:block' class=\"alert alert-info\"><strong>You can also adjust the weigth of importance of your choises!</strong></div><ul></ul></div></div></div><div class='row'><div style='margin-bottom:0px;' class=\"col-sm-12\"><button type=\"submit\" style='width: 100%;height: 5%;' class=\"btn btn-primary\">Sort The Results</button></div></div></form>");
         jQuery.each($("#select-sort-option-container option"), function (i, al) {
             $("#container-1-options").append("<div class='div-container-sort' id='select-list" + $(al).val() + "'><div class='row'><div class='col-sm-8'><label class='label-sort'><input name='sort_based_option' class='option-checker' type='checkbox' value='" + $(al).val() + "'><span class='label-sort-span'>" + $(al).val() + "</span></label></div>" + "<div class='col-sm-4'><svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" width=\"100%\" height=\"15px\" viewBox=\"0 0 90.594 59.714\" enable-background=\"new 0 0 90.594 59.714\" xml:space=\"preserve\"> <polyline class=\"check\" fill=\"none\" stroke=\"#006837\" stroke-width=\"5\" stroke-miterlimit=\"10\" points=\"1.768,23.532 34.415,56.179 88.826,1.768\"/></svg>" + "</div></div><div class='underline-border'></div></div>");
 

@@ -71,8 +71,8 @@ public class BringAspectsByHotelHandler {
                     //////////
                     //////////
                     /////Modal for stats ////////////////////////////////////
-                    HotelL.append("<div class='stats-container" + Hotel.getHotelId() + "'></div>" + "<button class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\".bd-example-modal-lghotel" + Hotel.getHotelId() + "\">See detailed stats</button>\n"
-                            + "\n"
+                    HotelL.append("<div class='stats-container" + Hotel.getHotelId() + "'></div>" + "<button class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\".bd-example-modal-lghotel" + Hotel.getHotelId() + "\">See detailed stats</button>\n");
+                           HotelL.parent().append("\n"
                             + "<div class=\"modal fade bd-example-modal-lghotel" + Hotel.getHotelId() + "\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\" aria-hidden=\"true\">\n"
                             + "  <div class=\"modal-dialog modal-lg\">\n"
                             + "    <div class=\"modal-content\">\n"
@@ -95,7 +95,7 @@ public class BringAspectsByHotelHandler {
 
                 }
                 //////////////////////////////////////////////
-                Elements Selected = HotelL.select("#hotel" + Hotel.getHotelId());
+                Elements Selected = HotelL.parent().select("#hotel" + Hotel.getHotelId());
                 //////Check if there are any hotels with stats//////////////////
                 if (Selected.size() > 0) {
                     Selected.get(0).append("<div id=\"accordionHotelStats" + Hotel.getHotelId() + "\" role=\"tablist\" aria-multiselectable=\"true\">\n"
