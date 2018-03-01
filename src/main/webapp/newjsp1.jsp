@@ -508,67 +508,7 @@
     }
     window.onerror = stoperror;
     var mapp;
-    function initMap() {
-      if($("#sort_by").length!==0){
-        var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('mapforevents'), {
-            zoom: 7,
-            center: uluru
-        });
-    var LocationCity = $('[name="ssne"]').val().split(",")[0];
-        $.ajax({
-            url: 'Home?action=mapMarkers',
-            contentType: "json",
-            data: {"city": LocationCity},
-            type: 'GET',
-            cache: false,
-            success: function (result) {
-                var Hotels = result.Hotels;
-
-                
-                for (var i = 0; i < Hotels.length; i++) {
-                    var k=0;
-                    var Location = JSON.parse(Hotels[i].Location);
-                    var Info = JSON.parse(Hotels[i].Info);
-                    var urll=String(Info.hotelUrl);
-                            var url=urll.replace("http://www.booking.com/","/UrlContoller?q=").replace("highlight_room=#hotelTmpl","")+"&parameterUrl=link";
-                   // alert(url);
-                    var contentString = '<div id="content'+i+'">'+'<div id="siteNotice'+i+'">'+'</div>'+'<h1 id="firstHeading'+i+'" class="firstHeading">'+String(Info.hoteName)+'</h1>'+'<div id="bodyContent">'+            '<a  href="'+encodeURI(url)+'">'+'see the hotel page'+'</a> '+
-            '</div>'+
-            '</div>';
-
-        var infowindow = new google.maps.InfoWindow({
-          content: contentString
-        });
-                    var icon = {
-    url: "Css\\15-512.png", // url
-    scaledSize: new google.maps.Size(30, 30), // scaled size
-    origin: new google.maps.Point(0,0), // origin
-    anchor: new google.maps.Point(0, 0) // anchor
-};
-                    //;
-                    //
-                     var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(Location.hoteLat, Location.hoteLong),
-                icon:icon,
-                map: mapp
-            });
-          google.maps.event.addListener(marker,'click', (function(marker,contentString,infowindow){ 
-    return function() {
-        infowindow.setContent(contentString);
-        infowindow.open(mapp,marker);
-    };
-})(marker,contentString,infowindow));
-                   
-                }
-            }
-        });
-
-         
-        
-        mapp = map;
-    }
-    }
+    
      
       $(document).ready(function(){
           

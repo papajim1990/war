@@ -7,8 +7,7 @@ package com.mycompany.mavenproject2.Search.Search;
 
 import Beans.SentenceSentBean;
 import DAO.DaoSentence;
-import Search.InitAnnotator;
-import Search.Relation;
+
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
@@ -87,7 +86,13 @@ public class StanfordTripletsAndAspects {
                         
                        
                    
-                             for(TypedDependency type:td){
+                            
+                        }
+                
+           
+                       
+                        /*
+                     for(TypedDependency type:td){
                                  Relation Rel = new Relation();
                         Rel.setTargetLemma(null);
                         Rel.setidSentence(readLine.getSentenceid());
@@ -126,15 +131,11 @@ public class StanfordTripletsAndAspects {
                         //dao.addarelationspersentenceout(Rel);
                         
                         }
-                        */
+                    }
+                      
                         
                     
-                    }
-                        }
-                
-           
-                       
-                        /*
+                    
                         TregexPattern pattern = TregexPattern.compile("__");
                         TregexMatcher matcher = pattern.matcher(tree);
                         Set<String> Aspects = new HashSet<String>();

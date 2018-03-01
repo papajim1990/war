@@ -24,8 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Connection.ConnectToDb;
-import Search.AspectOpinionVerb;
-import Search.Relation;
+
 import java.util.Iterator;
 import java.util.Map;
 
@@ -159,7 +158,7 @@ public class DaoSentence {
             System.exit(1);
         }
     }
-     public void addarelationspersentence(Relation relation) {
+    /* public void addarelationspersentence(Relation relation) {
         try {
             
                 String query = "insert into relations (IdSentence,Head,Relation,Dependend,PosHead,PosDep) values (?,?,?,?,?,?) ";
@@ -200,6 +199,7 @@ public class DaoSentence {
             e.printStackTrace();
         }
     }
+    */
     public void addTagsSentencePos(SentenceBean Sentence) {
         try {
 Iterator it = Sentence.getSentenceTagsPos().entrySet().iterator();

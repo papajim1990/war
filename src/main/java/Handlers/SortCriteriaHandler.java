@@ -364,7 +364,12 @@ doc.getElementById("hotellist_inner").append("<div class='block-header-criteria 
                     o++;
                     
                 }
-
+                doc.select(".choises-panel").append("<script>$(\".choises-panel li\").click(function(){\n" +
+                        "$('html, body').animate({\n" +
+"        scrollTop: $('.searchboxInc-'+$(this).find(\".aspect-li\").html().replace(/[^a-zA-Z0-9]+/g, \"\")).offset().top\n" +
+"    }, 2000);"+
+"        $('.box-top-5').removeClass('box-top-5-hi'); \n $('.searchboxInc-'+$(this).find(\".aspect-li\").html().replace(/[^a-zA-Z0-9]+/g, \"\")).addClass('box-top-5-hi');" +
+"    });</script>");
                 for (HotelRankBean ending : Combined) {
 
                     containsNameRank(Combined, ending.getHote().getHotel().getHotelUrl(), ending.getHoteAspectScore(), ending.getHotelAspect(), end, ending.getHote());
@@ -386,9 +391,12 @@ doc.getElementById("hotellist_inner").append("<div class='block-header-criteria 
                         System.out.println("Before " + sorted.getHote().getHotel().getHoteName() + " --- " + sorted.getHotelAspect() + "-----" + sorted.getHoteAspectScore());
                         // doc.getElementById("hotellist_inner").append(sorted.getHote().getDiv());
                     }
-                   doc.select(".choises-panel").select("ul").append("<li><span class='aspect-li'>" + aspe + "</span><span class='range-li'> - " + Filtetrs.get(aspe) + "%</span></li>");
+                   doc.select(".choises-panel").select("ul").append("<li class='list-inline-item'><span class='aspect-li'>" + aspe + "</span><span class='range-li'> - " + Filtetrs.get(aspe) + "%</span></li>");
 
                 }
+                doc.select(".choises-panel").append("<script>$(\".choises-panel li\").click(function(){\n" +
+"       \n" +
+"    });</script>");
                 Collections.sort(Combined, Collections.reverseOrder());
 
                 for (HotelRankBean beani : Combined) {

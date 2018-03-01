@@ -8,6 +8,7 @@ var userid;
 var access_token;
 var before;
 var help;
+var mapp;
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -168,7 +169,7 @@ function BringCommentsByAspect() {
         $("#total-group-2").parent().addClass("selected-highl");
     }
 
-    var dat = {"urlhotel": window.location.href.replace("http://localhost:8080/UrlContoller?q=", "")};
+    var dat = {"urlhotel": window.location.href.replace("http://"+extractRootDomain(window.location.href)+"/UrlContoller?q=", "")};
     $("#reviews-reviews-reviews").html("");
     $("#pager-div-panel").remove();
     $("#reviews-reviews-reviews").append("<div class='row'><div class='col-sm-12'><img id='loading-reviews-gif' src='Css/05741525b70c7ca6bcb88afd4aa16632.gif'/></div></div>");
@@ -230,7 +231,7 @@ function getnextByAspect(offset, Total) {
     $("#reviews-reviews-reviews").html("");
     $("#pager-div-panel").remove();
     $("#reviews-reviews-reviews").append("<div class='row'><div class='col-sm-12'><img id='loading-reviews-gif' src='Css/05741525b70c7ca6bcb88afd4aa16632.gif'/></div></div>");
-    var dat = {"urlhotel": window.location.href.replace("http://localhost:8080/UrlContoller?q=", "")};
+    var dat = {"urlhotel": window.location.href.replace("http://"+extractRootDomain(window.location.href)+"/UrlContoller?q=", "")};
     $.ajax({
 
         type: "POST",
@@ -341,7 +342,7 @@ function BringCommentsBothAll() {
 
         type: "GET",
         url: "Home?action=BringCommentsBothAll" + "&start=10" + "&end=0",
-        data: {"urlhotel": window.location.href.replace("http://localhost:8080/UrlContoller?q=", "")},
+        data: {"urlhotel": window.location.href.replace("http://"+extractRootDomain(window.location.href)+"/UrlContoller?q=", "")},
         beforeSend: function () {
             $("#loading-reviews-gif").show();
             $("#countryusersort input:radio[name='group__1']").prop('disabled', true);
@@ -397,7 +398,7 @@ function getnextAll(offset, Total) {
 
         type: "GET",
         url: "Home?action=BringCommentsBothAll&start=10" + "&end=" + offset,
-        data: {"urlhotel": window.location.href.replace("http://localhost:8080/UrlContoller?q=", "")},
+        data: {"urlhotel": window.location.href.replace("http://"+extractRootDomain(window.location.href)+"/UrlContoller?q=", "")},
         beforeSend: function () {
             $("#loading-reviews-gif").show();
             $("#countryusersort input:radio[name='group__1']").prop('disabled', true);
@@ -495,7 +496,7 @@ function BringCommentsByBoth(Country, TypeOfUser) {
 
         type: "GET",
         url: "Home?action=BringCommentsBothFilters&Country=" + Country + "&TypeOfUser=" + TypeOfUser + "&start=10" + "&end=0",
-        data: {"urlhotel": window.location.href.replace("http://localhost:8080/UrlContoller?q=", "")},
+        data: {"urlhotel": window.location.href.replace("http://"+extractRootDomain(window.location.href)+"/UrlContoller?q=", "")},
         beforeSend: function () {
             $("#loading-reviews-gif").show();
             $("#countryusersort input:radio[name='group__1']").prop('disabled', true);
@@ -551,7 +552,7 @@ function getpagecommentsOffsetByBoth(Country, TypeOfUser, offset, Total) {
 
         type: "GET",
         url: "Home?action=BringCommentsBothFilters&Country=" + Country + "&TypeOfUser=" + TypeOfUser + "&start=10" + "&end=" + offset,
-        data: {"urlhotel": window.location.href.replace("http://localhost:8080/UrlContoller?q=", "")},
+        data: {"urlhotel": window.location.href.replace("http://"+extractRootDomain(window.location.href)+"/UrlContoller?q=", "")},
         beforeSend: function () {
             $("#loading-reviews-gif").show();
             $("#countryusersort input:radio[name='group__1']").prop('disabled', true);
@@ -648,7 +649,7 @@ function BringCommentsByTypeOfUser(TypeOfUser, Total) {
 
         type: "GET",
         url: "Home?action=BringCommentsForTypeOfUser&TypeOfUser=" + TypeOfUser + "&start=10" + "&end=0",
-        data: {"urlhotel": window.location.href.replace("http://localhost:8080/UrlContoller?q=", "")},
+        data: {"urlhotel": window.location.href.replace("http://"+extractRootDomain(window.location.href)+"/UrlContoller?q=", "")},
         beforeSend: function () {
             $("#loading-reviews-gif").show();
             $("#countryusersort input:radio[name='group__1']").prop('disabled', true);
@@ -703,7 +704,7 @@ function getpagecommentsOffsetTypeOfUser(TypeOfUser, offset, Total) {
 
         type: "GET",
         url: "Home?action=BringCommentsForTypeOfUser&TypeOfUser=" + TypeOfUser + "&start=10" + "&end=" + offset,
-        data: {"urlhotel": window.location.href.replace("http://localhost:8080/UrlContoller?q=", "")},
+        data: {"urlhotel": ("http://"+extractRootDomain(window.location.href)+"/UrlContoller?q=", "")},
         beforeSend: function () {
             $("#loading-reviews-gif").show();
             $("#countryusersort input:radio[name='group__1']").prop('disabled', true);
@@ -799,7 +800,7 @@ function BringCommentsByCountry(Country, Total) {
 
         type: "GET",
         url: "Home?action=BringCommentsForCountry&Country=" + Country + "&start=10" + "&end=0",
-        data: {"urlhotel": window.location.href.replace("http://localhost:8080/UrlContoller?q=", "")},
+        data: {"urlhotel": window.location.href.replace("http://"+extractRootDomain(window.location.href)+"/UrlContoller?q=", "")},
         beforeSend: function () {
             $("#loading-reviews-gif").show();
             $("#countryusersort input:radio[name='group__1']").prop('disabled', true);
@@ -855,7 +856,7 @@ function getpagecommentsOffset(Country, offset, Total) {
 
         type: "GET",
         url: "Home?action=BringCommentsForCountry&Country=" + Country + "&start=10" + "&end=" + offset,
-        data: {"urlhotel": window.location.href.replace("http://localhost:8080/UrlContoller?q=", "")},
+        data: {"urlhotel": window.location.href.replace("http://"+extractRootDomain(window.location.href)+"/UrlContoller?q=", "")},
         beforeSend: function () {
             $("#loading-reviews-gif").show();
             $("#countryusersort input:radio[name='group__1']").prop('disabled', true);
@@ -968,7 +969,7 @@ function getnextpagecomments(start, end, beforetotal, total, rangestart, rangeen
 
         type: "GET",
         url: "Home?action=BringComments&start=" + (start) + "&end=" + (end),
-        data: {"urlhotel": window.location.href.replace("http://localhost:8080/UrlContoller?q=", "")},
+        data: {"urlhotel": window.location.href.replace("http://"+extractRootDomain(window.location.href)+"/UrlContoller?q=", "")},
         beforeSend: function () {
             $("#loading-reviews-gif").show();
             $("#countryusersort input:radio[name='group__1']").prop('disabled', true);
@@ -1180,7 +1181,7 @@ function getbeforepagecomments(start, end, beforetotal, total, rangestart, range
     $.ajax({
         type: "GET",
         url: "Home?action=BringComments&start=" + (start) + "&end=" + (end),
-        data: {"urlhotel": window.location.href.replace("http://localhost:8080/UrlContoller?q=", "")}, // serializes the form's elements.
+        data: {"urlhotel": window.location.href.replace("http://"+extractRootDomain(window.location.href)+"/UrlContoller?q=", "")}, // serializes the form's elements.
         beforeSend: function () {
             $("#loading-reviews-gif").show();
             $("#countryusersort input:radio[name='group__1']").prop('disabled', true);
@@ -1406,6 +1407,7 @@ function maximizeevents(thiss) {
 }
 
 $(document).ready(function () {
+    
     $('.collapse').on('show.bs.collapse', function (e) {
         // Get clicked element that initiated the collapse...
         clicked = $(document).find("[href='#" + $(e.target).attr('id') + "']");
@@ -1429,7 +1431,7 @@ $(document).ready(function () {
     $.ajax({
         type: "GET",
         url: "Home?action=BringTopicsHotel",
-        data: {"urlhotel": window.location.href.replace("http://localhost:8080/UrlContoller?q=", "")}, // serializes the form's elements.
+        data: {"urlhotel": window.location.href.replace("http://"+extractRootDomain(window.location.href)+"/UrlContoller?q=", "")}, // serializes the form's elements.
 
         success: function (data)
         {
@@ -1441,7 +1443,7 @@ $(document).ready(function () {
                     $("#filters-topics-sort-option").append("<li class='review-list-topic-filter__list-item'><label class='review-list-topic-link'><input type='checkbox' name='group__3' value='" + Asp[p].aspect + "' class='checkboxes-aspects-filter'/>" + Asp[p].aspect + "</label></li>");
                 }
             }
-            var dat = {"urlhotel": window.location.href.replace("http://localhost:8080/UrlContoller?q=", "")};
+            var dat = {"urlhotel": window.location.href.replace("http://"+extractRootDomain(window.location.href)+"/UrlContoller?q=", "")};
 
             $("#filters-topics-sort-option li input").change(function () {
                 if ($(this).prop("checked") === true) {
@@ -1481,7 +1483,7 @@ $(document).ready(function () {
         $.ajax({
             type: "GET",
             url: "Home?action=BringSortOptions",
-            data: {"urlhotel": window.location.href.replace("http://localhost:8080/UrlContoller?q=", "")}, // serializes the form's elements.
+            data: {"urlhotel": window.location.href.replace("http://"+extractRootDomain(window.location.href)+"/UrlContoller?q=", "")}, // serializes the form's elements.
             success: function (data)
             {
                 $('#countryusersort').append(
@@ -1582,7 +1584,7 @@ $(document).ready(function () {
                 $.ajax({
                     type: "GET",
                     url: "Home?action=BringComments&start=" + rangestart + "&end=" + (rangestart + 9) + "",
-                    data: {"urlhotel": window.location.href.replace("http://localhost:8080/UrlContoller?q=", "")}, // serializes the form's elements.
+                    data: {"urlhotel": window.location.href.replace("http://"+extractRootDomain(window.location.href)+"/UrlContoller?q=", "")}, // serializes the form's elements.
                     beforeSend: function () {
                         $("#loading-reviews-gif").show();
                         $("#countryusersort input:radio[name='group__1']").prop('disabled', true);
@@ -1963,10 +1965,17 @@ $(document).ready(function () {
 
     }
     $(document).ready(function () {
+        $(".sr_room_reinforcement").css("display","inline-block");
         $(".sr_item").removeClass("card_elevation");
         $(".sr_item").removeClass("card_elevation_clickable");
         $(".sr_item").removeClass("card_elevation_nodebounce");
         $(".sr_item").removeClass("card_elevation_hover");
+         
+        $(".sr_item .btn-primary").click(function(e) {
+   //do something
+   $(""+$(this).attr("data-target")+"").modal("show");
+   e.stopPropagation();
+});
         $(".seac-bar-modal").keyup(function(){
             mySearchModal($(this).attr("id").split("-")[1]);
         });
@@ -2041,6 +2050,7 @@ $(document).ready(function () {
         });
 
         $("#events-neraby").click(function () {
+
             if ($("#Fb-events-container").css("display") === "none") {
                 $("#Fb-events-container").html("");
                 $.ajaxSetup({cache: true});
@@ -2089,7 +2099,7 @@ $(document).ready(function () {
                                                             mapp.setZoom(13);
                                                             mapp.setCenter(new google.maps.LatLng(al.place.location.latitude, al.place.location.longitude));
                                                             mapp.setMapTypeId(google.maps.MapTypeId.ROADMAP);
-                                                            $("#accordion-event").append("<div class='col-sm-4 '><div class='card event-card'><div class='card-block event-block'><h3 class='card-title'>" + al.name + "</h3><h5 class='date-event'>" + datestart + "</h5><button type='button' class='btn btn-primary' data-toggle='modal' data-target='.bd-example-modal-lg" + i + "'>See more</button></div></div></div><div class='modal fade bd-example-modal-lg" + i + "' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'><div class='modal-dialog modal-lg'> <div class='modal-content'> <div class='modal-content content-description-event'><h5>Description:</h5><p>" + al.description + "</p><button type='button'  class='btn btn-primary login' data-toggle='modal' data-target='#mapEvents' onclick='newLocation(" + al.place.location.latitude + "," + al.place.location.longitude + ")" + "'>See Map</button></div></div></div>");
+                                                            $("#accordion-event").append("<div class='col-sm-4 '><div class='card event-card'><div class='card-block event-block'><h3 class='card-title'>" + al.name + "</h3><h5 class='date-event'><i class='fas fa-calendar-alt'></i>" + datestart + "</h5><button type='button' class='btn btn-primary' data-toggle='modal' data-target='.bd-example-modal-lg" + i + "'>See more</button></div></div></div><div class='modal fade bd-example-modal-lg" + i + "' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'><div class='modal-dialog modal-lg'> <div class='modal-content'> <div class='modal-content content-description-event'><h5>Description:</h5><p>" + al.description + "</p><button type='button'  class='btn btn-primary login' data-toggle='modal' data-target='#mapEvents' onclick='newLocation(" + al.place.location.latitude + "," + al.place.location.longitude + ")" + "'>See Map</button></div></div></div>");
 
                                                         }
 
@@ -2097,6 +2107,7 @@ $(document).ready(function () {
                                                 }
                                             }
                                         }
+                                                    
                                     });
                                     if ("paging" in response) {
                                         next = response.paging.next;
@@ -2137,6 +2148,7 @@ $(document).ready(function () {
         });
         // avoid to execute the actual submit of the form.
     });
+   
 });
 function paginationFab(button) {
     if (next) {
@@ -2188,13 +2200,80 @@ function paginationFab(button) {
 
     $(button).parent().html("");
 }
+function initMap() {
+      if($("#sort_by").length!==0){
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('mapforevents'), {
+            zoom: 7,
+            center: uluru
+        });
+    var LocationCity = $('[name="ssne"]').val().split(",")[0];
+        $.ajax({
+            url: 'Home?action=mapMarkers',
+            contentType: "json",
+            data: {"city": LocationCity},
+            type: 'GET',
+            cache: false,
+            success: function (result) {
+                var Hotels = result.Hotels;
 
+                
+                for (var i = 0; i < Hotels.length; i++) {
+                    var k=0;
+                    var Location = JSON.parse(Hotels[i].Location);
+                    var Info = JSON.parse(Hotels[i].Info);
+                    var urll=String(Info.hotelUrl);
+                            var url=urll.replace("http://www.booking.com/","/UrlContoller?q=").replace("highlight_room=#hotelTmpl","")+"&parameterUrl=link";
+                   // alert(url);
+                    var contentString = '<div id="content'+i+'">'+'<div id="siteNotice'+i+'">'+'</div>'+'<h1 id="firstHeading'+i+'" class="firstHeading">'+String(Info.hoteName)+'</h1>'+'<div id="bodyContent">'+            '<a  href="'+encodeURI(url)+'">'+'see the hotel page'+'</a> '+
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+                    var icon = {
+    url: "Css\\15-512.png", // url
+    scaledSize: new google.maps.Size(30, 30), // scaled size
+    origin: new google.maps.Point(0,0), // origin
+    anchor: new google.maps.Point(0, 0) // anchor
+};
+                    //;
+                    //
+                     var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(Location.hoteLat, Location.hoteLong),
+                icon:icon,
+                map: mapp
+            });
+          google.maps.event.addListener(marker,'click', (function(marker,contentString,infowindow){ 
+    return function() {
+        infowindow.setContent(contentString);
+        infowindow.open(mapp,marker);
+    };
+})(marker,contentString,infowindow));
+                   
+                }
+            }
+        });
+
+         
+        
+        mapp = map;
+    }
+    
+    }
 function newLocation(newLat, newLng)
 {
+    setTimeout(function() { google.maps.event.trigger(mapp, 'resize'); 
+      
     mapp.setCenter({
         lat: newLat,
         lng: newLng
     });
+  
+
+   }, 500);
+
 }
 function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
@@ -2203,7 +2282,7 @@ function searchaspectsbox() {
     // Declare variables
     var input, filter, ul, li, a, i;
     input = document.getElementById('myInput');
-    filter = input.value.toUpperCase();""
+    filter = input.value.toUpperCase();
     ul = document.getElementById("container-1-options");
     li = document.getElementsByClassName('div-container-sort');
 
@@ -2240,4 +2319,42 @@ function mySearchModal(idhotel){
         }
     }
     
+}
+$(document).ready(function(){
+    alert(extractRootDomain(window.location.href));
+})
+function extractRootDomain(url) {
+    var domain = extractHostname(url),
+        splitArr = domain.split('.'),
+        arrLen = splitArr.length;
+
+    //extracting the root domain here
+    //if there is a subdomain 
+    if (arrLen > 2) {
+        domain = splitArr[arrLen - 2] + '.' + splitArr[arrLen - 1];
+        //check to see if it's using a Country Code Top Level Domain (ccTLD) (i.e. ".me.uk")
+        if (splitArr[arrLen - 1].length == 2 && splitArr[arrLen - 1].length == 2) {
+            //this is using a ccTLD
+            domain = splitArr[arrLen - 3] + '.' + domain;
+        }
+    }
+    return domain;
+}
+function extractHostname(url) {
+    var hostname;
+    //find & remove protocol (http, ftp, etc.) and get hostname
+
+    if (url.indexOf("://") > -1) {
+        hostname = url.split('/')[2];
+    }
+    else {
+        hostname = url.split('/')[0];
+    }
+
+    //find & remove port number
+  
+    //find & remove "?"
+    hostname = hostname.split('?')[0];
+
+    return hostname;
 }

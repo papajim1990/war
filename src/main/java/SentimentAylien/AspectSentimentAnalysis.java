@@ -39,7 +39,7 @@ public class AspectSentimentAnalysis {
 
                 for (SentenceSentBean sent : allComments) {
 
-                    if ( sent.getHotelId()==9495) {
+                   
 System.out.println(sent.getSentenceid());
                         String api = "b91eb90e";//b746857d a17edd28 c7f05131
                         String secret = "b67670a3c6bea9bf28747bdf1c659e02";//e3716f3d5910320815318cbd7e27d744 639fbcfd3f8689ccdf1781ad1dae854a 639fbcfd3f8689ccdf1781ad1dae854a
@@ -86,7 +86,7 @@ System.out.println(sent.getSentenceid());
 
                     }
 
-                }
+                
 
             } catch (Exception ex) {
                 Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
