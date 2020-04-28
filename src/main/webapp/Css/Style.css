@@ -25,6 +25,9 @@ and open the template in the editor.
 .sort_option_avoid{
 
 }
+.cross-product-bar__wrapper{
+   height: auto;
+}
 .brand-box{
     margin: 5px;
     color: #4267b2;
@@ -630,7 +633,7 @@ input[type=range]:focus::-ms-fill-upper {
 
     overflow-y: hidden;
     transition: 0.5s;
-    background: url('6.-p.gr-assets.com_.gif') 
+    background: url('ZlXo.gif') 
         100% 100%;
     background-repeat: no-repeat;
 }

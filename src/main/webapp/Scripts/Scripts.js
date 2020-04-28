@@ -1472,10 +1472,14 @@ $(document).ready(function () {
         var rangeend;
         var total = 0;
         var beforetotal = 1;
-        $("#reviews-reviews-reviews").html("");
+        $("#reviews-error-message").css("max-width", "unset");
+        $("#reviews-error-message").css("text-align", "unset");
+        $("#reviews-error-message").css("margin", "0");
+        $("#reviews-error-message").css("display", "block");
+
         $(".language_filter").first().html('');
-        $('.review_list_nav').first().css("border-bottom", "1px solid #ededed");
-        $('.review_list_nav').first().html(
+        $('#reviews-error-message').css("border-bottom", "1px solid #ededed");
+        $('#reviews-error-message').html(
                 '<div style="display:none" data-js-change-dropdown-to-radio-s="2"></div>' +
                 '<div style="display:none" data-js-change-dropdown-to-radio-s="4"></div>' +
                 ' <div class="reviews-sorting__wrapper">' +
@@ -2322,6 +2326,9 @@ function mySearchModal(idhotel){
 }
 $(document).ready(function(){
     alert(extractRootDomain(window.location.href));
+    $(".cross-product-bar__wrapper").css("height", "auto");
+
+
 })
 function extractRootDomain(url) {
     var domain = extractHostname(url),
