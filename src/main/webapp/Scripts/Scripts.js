@@ -2325,7 +2325,7 @@ function mySearchModal(idhotel){
     
 }
 $(document).ready(function(){
-    alert(extractRootDomain(window.location.href));
+    //alert(extractRootDomain(window.location.href));
     $(".cross-product-bar__wrapper").css("height", "auto");
 
 
@@ -2345,7 +2345,7 @@ function extractRootDomain(url) {
             domain = splitArr[arrLen - 3] + '.' + domain;
         }
     }
-    return domain;
+    return domain+"/mavenproject2_war";
 }
 function extractHostname(url) {
     var hostname;

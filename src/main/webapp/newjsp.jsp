@@ -43,14 +43,7 @@
     Register.append("<a class='popover_trigger login-message'>Welcome "+user.getFirstname()+"</a>");
     doc.getElementById("user_form").select("ul").attr("class", "user_center_nav").get(0).append("<li class='account_register_option user_center_option uc_account'><button onclick='logout()' type='button' id='logout-button' class='btn btn-primary'>Log out</button></li>");
     }else{
-    Element Register = doc.getElementById("current_account");
-    Register.select("a").remove();
-    Register.attr("data-command", "");
-    Register.append("<button type='button' class='btn btn-primary signup' data-toggle='modal' data-target='#myModall'>Sign Up</button>");
-    Element Register1 = doc.getElementsByClass("account_register_option").get(0);
-    Register1.select("a").remove();
-    Register1.attr("data-command", "");
-    Register1.append("<button type='button'  class='btn btn-primary login' data-toggle='modal' data-target='#myModalll'>Log In</button>");
+
     }
 
     for (Element el : doc.select("div[data-url]")) {

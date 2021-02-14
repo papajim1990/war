@@ -34,7 +34,7 @@ public class ConnectToDb {
             String password = properties.getProperty( "password" );
             Class.forName( driver );
             
-            conn = DriverManager.getConnection( url, user, password );
+            conn = DriverManager.getConnection( url, "user", password );
         } catch (IOException | ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
