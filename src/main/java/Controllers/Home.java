@@ -120,7 +120,7 @@ public class Home extends HttpServlet {
 
         //Ayline Sentiment Aspect Based
         if (request.getParameter("action").equalsIgnoreCase("startSentiment")) {
-            List<SentenceSentBean> allComments = daoSen.getAllSentencesnot(9474);
+            List<SentenceSentBean> allComments = daoSen.getAllSentences();
             AspectSentimentAnalysis analyze = new AspectSentimentAnalysis();
             analyze.Analyze(allComments, daoSen);
         }
