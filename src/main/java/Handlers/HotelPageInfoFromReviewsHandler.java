@@ -10,8 +10,10 @@ import Beans.CommentBean;
 import Beans.HotelBean;
 import DAO.DaoHotels;
 import DAO.DaoSentence;
+
 import static Handlers.BringAspectsByHotelHandler.getMonthForInt;
 import static Handlers.BringAspectsByHotelHandler.getOrderedMaps;
+
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -32,10 +34,10 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
+
 import org.jsoup.nodes.Document;
 
 /**
- *
  * @author user1
  */
 public class HotelPageInfoFromReviewsHandler {
@@ -67,50 +69,50 @@ public class HotelPageInfoFromReviewsHandler {
                     if (!(Beanni.getCommentBodyPos().trim().equalsIgnoreCase("") || Beanni.getCommentBodyPos().trim().isEmpty()) && !(Beanni.getCommentBodyNeg().trim().equalsIgnoreCase("") || Beanni.getCommentBodyNeg().trim().isEmpty())) {
                         doc.getElementById("locals-commnets-container").append(
                                 "           <div class=\"hp-social_proof-item\"> \n"
-                                + "            <div class=\"hp-social_proof-quote_bubble\"> \n"
-                                + "             <div class=\"quote_bubble__content\"> \n" + "<i class=\"fas fa-plus\"></i>\n"
-                                + ""
-                                + Beanni.getCommentBodyPos()
-                                + "<br>" + "<i class=\"fas fa-minus\"></i>\n" + Beanni.getCommentBodyNeg()
-                                + "             </div> \n"
-                                + "            </div> \n"
-                                + "            <div class=\"hp-social_proof-quote_author clearfix\"> \n"
-                                + "             <div class=\"hp-social_proof-quote_author-details\">\n" + Beanni.getCommentReviwerType()
-                                + "              <br>\n"
-                                + Beanni.getCommentCountry()
-                                + "             </div> \n"
-                                + "            </div> \n"
-                                + "           </div> \n");
+                                        + "            <div class=\"hp-social_proof-quote_bubble\"> \n"
+                                        + "             <div class=\"quote_bubble__content\"> \n" + "<i class=\"fas fa-plus\"></i>\n"
+                                        + ""
+                                        + Beanni.getCommentBodyPos()
+                                        + "<br>" + "<i class=\"fas fa-minus\"></i>\n" + Beanni.getCommentBodyNeg()
+                                        + "             </div> \n"
+                                        + "            </div> \n"
+                                        + "            <div class=\"hp-social_proof-quote_author clearfix\"> \n"
+                                        + "             <div class=\"hp-social_proof-quote_author-details\">\n" + Beanni.getCommentReviwerType()
+                                        + "              <br>\n"
+                                        + Beanni.getCommentCountry()
+                                        + "             </div> \n"
+                                        + "            </div> \n"
+                                        + "           </div> \n");
                     } else if ((Beanni.getCommentBodyPos().trim().equalsIgnoreCase("") || Beanni.getCommentBodyPos().trim().isEmpty()) && !(Beanni.getCommentBodyNeg().trim().equalsIgnoreCase("") || Beanni.getCommentBodyNeg().trim().isEmpty())) {
                         doc.getElementById("locals-commnets-container").append(
                                 "           <div class=\"hp-social_proof-item\"> \n"
-                                + "            <div class=\"hp-social_proof-quote_bubble\"> \n"
-                                + "             <div class=\"quote_bubble__content\"> \n"
-                                + "<br>" + "<i class=\"fas fa-minus\"></i>\n" + Beanni.getCommentBodyNeg()
-                                + "             </div> \n"
-                                + "            </div> \n"
-                                + "            <div class=\"hp-social_proof-quote_author clearfix\"> \n"
-                                + "             <div class=\"hp-social_proof-quote_author-details\">\n" + Beanni.getCommentReviwerType()
-                                + "              <br>\n"
-                                + Beanni.getCommentCountry()
-                                + "             </div> \n"
-                                + "            </div> \n"
-                                + "           </div> \n");
+                                        + "            <div class=\"hp-social_proof-quote_bubble\"> \n"
+                                        + "             <div class=\"quote_bubble__content\"> \n"
+                                        + "<br>" + "<i class=\"fas fa-minus\"></i>\n" + Beanni.getCommentBodyNeg()
+                                        + "             </div> \n"
+                                        + "            </div> \n"
+                                        + "            <div class=\"hp-social_proof-quote_author clearfix\"> \n"
+                                        + "             <div class=\"hp-social_proof-quote_author-details\">\n" + Beanni.getCommentReviwerType()
+                                        + "              <br>\n"
+                                        + Beanni.getCommentCountry()
+                                        + "             </div> \n"
+                                        + "            </div> \n"
+                                        + "           </div> \n");
                     } else if (!(Beanni.getCommentBodyPos().trim().equalsIgnoreCase("") || Beanni.getCommentBodyPos().trim().isEmpty()) && (Beanni.getCommentBodyNeg().trim().equalsIgnoreCase("") || Beanni.getCommentBodyNeg().trim().isEmpty())) {
                         doc.getElementById("locals-commnets-container").append(
                                 "           <div class=\"hp-social_proof-item\"> \n"
-                                + "            <div class=\"hp-social_proof-quote_bubble\"> \n"
-                                + "             <div class=\"quote_bubble__content\"> \n"
-                                + "<br>" + "<i class=\"fas fa-plus\"></i>\n" + Beanni.getCommentBodyPos()
-                                + "             </div> \n"
-                                + "            </div> \n"
-                                + "            <div class=\"hp-social_proof-quote_author clearfix\"> \n"
-                                + "             <div class=\"hp-social_proof-quote_author-details\">\n" + Beanni.getCommentReviwerType()
-                                + "              <br>\n"
-                                + Beanni.getCommentCountry()
-                                + "             </div> \n"
-                                + "            </div> \n"
-                                + "           </div> \n");
+                                        + "            <div class=\"hp-social_proof-quote_bubble\"> \n"
+                                        + "             <div class=\"quote_bubble__content\"> \n"
+                                        + "<br>" + "<i class=\"fas fa-plus\"></i>\n" + Beanni.getCommentBodyPos()
+                                        + "             </div> \n"
+                                        + "            </div> \n"
+                                        + "            <div class=\"hp-social_proof-quote_author clearfix\"> \n"
+                                        + "             <div class=\"hp-social_proof-quote_author-details\">\n" + Beanni.getCommentReviwerType()
+                                        + "              <br>\n"
+                                        + Beanni.getCommentCountry()
+                                        + "             </div> \n"
+                                        + "            </div> \n"
+                                        + "           </div> \n");
                     }
                 }
             }
@@ -131,7 +133,7 @@ public class HotelPageInfoFromReviewsHandler {
                         + "\n"
                         + "                    <ul id='wrapper-for-stats-positive-1'>\n"
                         + "                    </ul>\n"
-                        + "                </li>\n"+
+                        + "                </li>\n" +
                         "                <li><a href=\"#\">Neutral</a>\n"
                         + "\n"
                         + "                    <ul id='wrapper-for-stats-neutrall-1'>\n"
@@ -150,7 +152,7 @@ public class HotelPageInfoFromReviewsHandler {
                         + "\n"
                         + "                    <ul id='wrapper-for-stats-positive-2'>\n"
                         + "                    </ul>\n"
-                        + "                </li>\n"+
+                        + "                </li>\n" +
                         "                <li><a href=\"#\">Neutral</a>\n"
                         + "\n"
                         + "                    <ul id='wrapper-for-stats-neutrall-2'>\n"
@@ -285,9 +287,9 @@ public class HotelPageInfoFromReviewsHandler {
                     System.out.println(entry.getKey() + "_" + entry.getValue());
                     if (entry.getValue() > 0.0) {
                         doc.getElementById("wrapper-for-stats-positive-1").append("<li class='positive-value'>" + entry.getKey() + "</li>");
-                    } else if(entry.getValue() == 0.0) {
+                    } else if (entry.getValue() == 0.0) {
                         doc.getElementById("wrapper-for-stats-neutrall-1").append("<li class='neutrall-value'>" + entry.getKey() + "</li>");
-                    }else{
+                    } else {
                         doc.getElementById("wrapper-for-stats-negative-1").append("<li class='negative-value'>" + entry.getKey() + "</li>");
                     }
                 }
@@ -295,7 +297,7 @@ public class HotelPageInfoFromReviewsHandler {
                     System.out.println(entry.getKey() + "_" + entry.getValue());
                     if (entry.getValue() > 0.0) {
                         doc.getElementById("wrapper-for-stats-positive-2").append("<li class='positive-value'>" + entry.getKey() + "</li>");
-                    }else if(entry.getValue() == 0.0) {
+                    } else if (entry.getValue() == 0.0) {
                         doc.getElementById("wrapper-for-stats-neutrall-2").append("<li class='neutrall-value'>" + entry.getKey() + "</li>");
                     } else {
                         doc.getElementById("wrapper-for-stats-negative-2").append("<li class='negative-value'>" + entry.getKey() + "</li>");
@@ -305,7 +307,7 @@ public class HotelPageInfoFromReviewsHandler {
                     System.out.println(entry.getKey() + "_" + entry.getValue());
                     if (entry.getValue() > 0.0) {
                         doc.getElementById("wrapper-for-stats-positive-3").append("<li class='positive-value'>" + entry.getKey() + "</li>");
-                    }else if(entry.getValue() == 0.0) {
+                    } else if (entry.getValue() == 0.0) {
                         doc.getElementById("wrapper-for-stats-neutrall-3").append("<li class='neutrall-value'>" + entry.getKey() + "</li>");
                     } else {
                         doc.getElementById("wrapper-for-stats-negative-3").append("<li class='negative-value'>" + entry.getKey() + "</li>");

@@ -32,12 +32,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 import org.apache.http.client.utils.URIBuilder;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 /**
- *
  * @author user1
  */
 public class UrlContoller extends HttpServlet {
@@ -66,13 +66,14 @@ public class UrlContoller extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+
     /**
      * Handles the HTTP <code>GET</code> method.
      *
-     * @param request servlet request
+     * @param request  servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * @throws IOException      if an I/O error occurs
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -83,10 +84,10 @@ public class UrlContoller extends HttpServlet {
     /**
      * Handles the HTTP <code>POST</code> method.
      *
-     * @param request servlet request
+     * @param request  servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * @throws IOException      if an I/O error occurs
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -118,7 +119,7 @@ public class UrlContoller extends HttpServlet {
         }
         if (request.getParameter("action") != null && request.getParameter("action").equalsIgnoreCase("DeleteOptionsSort")) {
             session1.removeAttribute("sort_based_option");
-            
+
         }
         if (request.getParameter("parameterUrl") != null) {
             URIBuilder b = null;
@@ -153,9 +154,9 @@ public class UrlContoller extends HttpServlet {
             } catch (SocketTimeoutException | UnknownHostException e) {
                 RequestDispatcher rd = request.getRequestDispatcher("/newjsp1.jsp");
                 URL domain = new URL("https://www.booking.com/");
-              
+
                 Document doc = Jsoup.connect(domain.toString().trim()).get();
-        
+
                 if (doc != null) {
                     PreparaeDocument prepare = new PreparaeDocument();
                     doc = prepare.preparedoc(doc, daohotel, daoSen, request);

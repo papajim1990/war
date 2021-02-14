@@ -13,14 +13,13 @@ import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESedeKeySpec;
+
 import org.apache.commons.codec.binary.Base64;
+
 /**
- *
  * @author user1
  */
 public class PasswordEncytDecrypt {
-
-
 
 
     private static final String UNICODE_FORMAT = "UTF8";
@@ -59,12 +58,12 @@ public class PasswordEncytDecrypt {
 
 
     public String decrypt(String encryptedString) {
-        String decryptedText=null;
+        String decryptedText = null;
         try {
             cipher.init(Cipher.DECRYPT_MODE, key);
             byte[] encryptedText = Base64.decodeBase64(encryptedString);
             byte[] plainText = cipher.doFinal(encryptedText);
-            decryptedText= new String(plainText);
+            decryptedText = new String(plainText);
         } catch (Exception e) {
             e.printStackTrace();
         }

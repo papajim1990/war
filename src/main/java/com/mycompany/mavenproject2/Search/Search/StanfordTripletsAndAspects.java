@@ -19,6 +19,7 @@ import edu.stanford.nlp.trees.TreeCoreAnnotations;
 import edu.stanford.nlp.trees.TreebankLanguagePack;
 import edu.stanford.nlp.trees.TypedDependency;
 import edu.stanford.nlp.util.CoreMap;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -26,7 +27,6 @@ import java.util.HashSet;
 import java.util.List;
 
 /**
- *
  * @author user1
  */
 public class StanfordTripletsAndAspects {
@@ -36,58 +36,42 @@ public class StanfordTripletsAndAspects {
         StanfordCoreNLP pipeline = InitAnnotator.InitAnnotator();
 
 
-
-    
-        
-    
         HashSet<String> hashMap;
         hashMap = new HashSet();
         HashSet<String> hashMap2 = new HashSet();
         List<String> Feautures = new ArrayList();
         List<String> Feautures2 = new ArrayList();
-        for(SentenceSentBean readLine:Sente){
+        for (SentenceSentBean readLine : Sente) {
             System.out.println(readLine.getSentenceid());
-            
-        
-          
-          
-                //content = removeStopWords(content);
 
 
+            //content = removeStopWords(content);
 
 
-                
-                Annotation document = new Annotation(readLine.getSentenceText().replaceAll("[^a-zA-Z0-9 .,'\"]", "-").replaceAll("\\.+", " . "));
-                // run all Annotators on this text
-                pipeline.annotate(document);
-                // Iterate over all of the sentences found
-               for(CoreMap sentence : document.get(CoreAnnotations.SentencesAnnotation.class)){
-                    System.out.println(sentence.toString());
-                
-                    Tree tree = sentence.get(TreeCoreAnnotations.TreeAnnotation.class);
-                    if (!sentence.toString().replaceAll("[^a-zA-Z0-9]", "").isEmpty()) {
+            Annotation document = new Annotation(readLine.getSentenceText().replaceAll("[^a-zA-Z0-9 .,'\"]", "-").replaceAll("\\.+", " . "));
+            // run all Annotators on this text
+            pipeline.annotate(document);
+            // Iterate over all of the sentences found
+            for (CoreMap sentence : document.get(CoreAnnotations.SentencesAnnotation.class)) {
+                System.out.println(sentence.toString());
+
+                Tree tree = sentence.get(TreeCoreAnnotations.TreeAnnotation.class);
+                if (!sentence.toString().replaceAll("[^a-zA-Z0-9]", "").isEmpty()) {
                     TreebankLanguagePack tlp = new PennTreebankLanguagePack();
                     GrammaticalStructureFactory gsf = tlp.grammaticalStructureFactory();
                     GrammaticalStructure gs = gsf.newGrammaticalStructure(tree);
                     Collection<TypedDependency> td = gs.typedDependenciesEnhancedPlusPlus();
-                    
 
-                   
-                       
-                        
-                 // Annotation tokenAnnotation = new Annotation(word);
-                      //  pipeline.annotate(tokenAnnotation);  // necessary for the LemmaAnnotation to be set.
-                       // List<CoreMap> lista = tokenAnnotation.get(SentencesAnnotation.class);
-                        //String tokenLemma = lista
-                        //.get(0).get(TokensAnnotation.class)
-                       // .get(0).get(LemmaAnnotation.class);
-                    
-                       
-                        
-                       
-                   
-                            
-                        }
+
+                    // Annotation tokenAnnotation = new Annotation(word);
+                    //  pipeline.annotate(tokenAnnotation);  // necessary for the LemmaAnnotation to be set.
+                    // List<CoreMap> lista = tokenAnnotation.get(SentencesAnnotation.class);
+                    //String tokenLemma = lista
+                    //.get(0).get(TokensAnnotation.class)
+                    // .get(0).get(LemmaAnnotation.class);
+
+
+                }
                 
            
                        
@@ -328,16 +312,16 @@ public class StanfordTripletsAndAspects {
                 
                 writer2.println(entry.getKey() + " " + entry.getValue());
                 */
-              
-                        
-                        }
-            
+
+
+            }
+
         }
-        
-        
-                }
-                
+
+
+    }
+
 }
 
-   
+
 //}

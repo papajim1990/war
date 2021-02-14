@@ -22,13 +22,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 /**
- *
  * @author user1
  */
 public class Dt {
@@ -177,13 +177,13 @@ public class Dt {
                                 // //System.out.println("Reviewer type:"+ k.text().trim());
                             }
                         }
-                       // DataMining tool = new DataMining();
+                        // DataMining tool = new DataMining();
                         boolean flag = false;
                         for (CommentBean test : Comments) {
-                          //  if (test.getCommentBodyPos().equals(Comment.getCommentBodyPos()) && test.getHoteid().equals(hotel.getHoteName()) && test.getCommentBodyNeg().equals(Comment.getCommentBodyNeg())) {
-                                flag = true;
-                                System.out.println(test.getCommentBodyPos() + "-----" + hotel.getHoteName());
-                          //  }
+                            //  if (test.getCommentBodyPos().equals(Comment.getCommentBodyPos()) && test.getHoteid().equals(hotel.getHoteName()) && test.getCommentBodyNeg().equals(Comment.getCommentBodyNeg())) {
+                            flag = true;
+                            System.out.println(test.getCommentBodyPos() + "-----" + hotel.getHoteName());
+                            //  }
                         }
                         System.out.println(flag);
                         if (flag == false) {
@@ -205,7 +205,7 @@ public class Dt {
                             CommentBean Comment = new CommentBean();
                             System.out.println("-----" + r.getElementsByClass("review_item_header_score_container").get(0).text() + "---" + r.getElementsByClass("review_item_header_content_container").get(0).select("span").first().text());
                             r.getElementsByClass("review_item_review_content").select("i.review_item_icon").remove();
-                           // Comment.setHotelHotelid(Hotelname);
+                            // Comment.setHotelHotelid(Hotelname);
                             Comment.setCommentBodyPos(r.getElementsByClass("review_pos").text());
                             Comment.setCommentBodyNeg(r.getElementsByClass("review_neg").text());
                             Comment.setHotelReviewTitle(r.getElementsByClass("review_item_header_content_container").get(0).select("span").first().text());
@@ -225,13 +225,13 @@ public class Dt {
                                     ////System.out.println("Reviewer type:"+ k.text().trim());
                                 }
                             }
-                           // DataMining tool = new DataMining();
+                            // DataMining tool = new DataMining();
                             boolean flag = false;
                             for (CommentBean test : Comments) {
-                              //  if (test.getCommentBodyPos().equals(Comment.getCommentBodyPos()) && test.getHoteid().equals(hotel.getHoteName()) && test.getCommentBodyNeg().equals(Comment.getCommentBodyNeg())) {
-                                    flag = true;
-                                    System.out.println(test.getCommentBodyPos() + "-----" + hotel.getHoteName());
-                              //  }
+                                //  if (test.getCommentBodyPos().equals(Comment.getCommentBodyPos()) && test.getHoteid().equals(hotel.getHoteName()) && test.getCommentBodyNeg().equals(Comment.getCommentBodyNeg())) {
+                                flag = true;
+                                System.out.println(test.getCommentBodyPos() + "-----" + hotel.getHoteName());
+                                //  }
                             }
                             System.out.println(flag);
                             if (flag == false) {
