@@ -12,6 +12,8 @@ import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.CoreMap;
+import edu.stanford.nlp.util.StringUtils;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -37,7 +39,7 @@ public class Sentence {
             SentenceSentBean Sente =new SentenceSentBean();
             for (CoreMap sentence : document.get(CoreAnnotations.SentencesAnnotation.class)) {
                 sentence.toString().trim();
-                if(sentence.toString().trim() != ""){
+                if(!StringUtils.isNullOrEmpty(sentence.toString())){
                     Sente.setHotelId(Bean.getHoteid());
                     Sente.setCommentid(Bean.getCommentId());
                     Sente.setSentenceText(sentence.toString());
@@ -54,7 +56,7 @@ public class Sentence {
             SentenceSentBean Sente2 =new SentenceSentBean();
             for (CoreMap sentence : document2.get(CoreAnnotations.SentencesAnnotation.class)) {
                 sentence.toString().trim();
-                if(sentence.toString().trim() != ""){
+                if(!StringUtils.isNullOrEmpty(sentence.toString())){
                     Sente2.setHotelId(Bean.getHoteid());
                     Sente2.setCommentid(Bean.getCommentId());
                     Sente2.setSentenceText(sentence.toString());
