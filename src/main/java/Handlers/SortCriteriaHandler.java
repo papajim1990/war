@@ -12,6 +12,7 @@ import Beans.HotelRankBean;
 import DAO.DaoHotels;
 import DAO.DaoSentence;
 import SentimentAylien.AspectSentimentAnalysis;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -35,13 +36,13 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 /**
- *
  * @author user1
  */
 public class SortCriteriaHandler {
@@ -60,7 +61,7 @@ public class SortCriteriaHandler {
 
             while (flag) {
                 try {
-                    
+
                     Document doci = Jsoup.connect(url).get();
                     Elements Sr_Item = doci.getElementsByClass("sr_item");
                     if (Sr_Item.size() > 0) {
@@ -339,8 +340,8 @@ public class SortCriteriaHandler {
             List<HotelRankBean> end = new ArrayList<>();
             String[] picks = new String[Filtetrs.size()];
             if (Filtetrs.size() > 1) {
-doc.getElementById("hotellist_inner").append("<div class='block-header-criteria text-center'><div class='row'><div class='col-sm-12'><div class='choises-panel'><h3 > The best choises sorted based on your criteria :</h3><ul class='list-inline'></ul></div></div></div><div class='row'><div class='col-sm-12'><button id=\"opensortoptionbutton\" class=\"sort_option_avoid \"><span>Change your criteria</span></button></div></div><div class='row'><div class='col-sm-12'><button id=\"opensortoptionbutton_delete\" class=\"sort_option_avoid_delete \"><span><i class=\"far fa-trash-alt\"></i>\n" +
-"Delete your options</span></button></div></div></div>");
+                doc.getElementById("hotellist_inner").append("<div class='block-header-criteria text-center'><div class='row'><div class='col-sm-12'><div class='choises-panel'><h3 > The best choises sorted based on your criteria :</h3><ul class='list-inline'></ul></div></div></div><div class='row'><div class='col-sm-12'><button id=\"opensortoptionbutton\" class=\"sort_option_avoid \"><span>Change your criteria</span></button></div></div><div class='row'><div class='col-sm-12'><button id=\"opensortoptionbutton_delete\" class=\"sort_option_avoid_delete \"><span><i class=\"far fa-trash-alt\"></i>\n" +
+                        "Delete your options</span></button></div></div></div>");
                 int o = 0;
 
                 for (String aspe : Filtetrs.keySet()) {
@@ -355,21 +356,21 @@ doc.getElementById("hotellist_inner").append("<div class='block-header-criteria 
                         System.out.println("Before " + sorted.getHote().getHotel().getHoteName() + " --- " + sorted.getHotelAspect() + "-----  " + sorted.getHoteAspectScore());
                         // doc.getElementById("hotellist_inner").append(sorted.getHote().getDiv());
                         if (sorted.getHotelAspect().equalsIgnoreCase(aspe) && k < 5) {
-                            doc.getElementsByClass("searchboxInc-" + sorted.getHotelAspect().replaceAll("[^A-Za-z0-9]", "")).append("<div><a href='"+sorted.getHote().getHotel().getHotelUrl().replaceAll("http://www.booking.com/", "")+"'> "+ sorted.getHote().getHotel().getHoteName() + "</a></div>");
+                            doc.getElementsByClass("searchboxInc-" + sorted.getHotelAspect().replaceAll("[^A-Za-z0-9]", "")).append("<div><a href='" + sorted.getHote().getHotel().getHotelUrl().replaceAll("http://www.booking.com/", "") + "'> " + sorted.getHote().getHotel().getHoteName() + "</a></div>");
                             k++;
                         }
                     }
                     picks[o] = aspe + " - " + Filtetrs.get(aspe);
                     doc.select(".choises-panel").select("ul").append("<li class='list-inline-item'><span class='aspect-li'>" + aspe + "</span><span class='range-li'>  " + Filtetrs.get(aspe) + "%</span></li>");
                     o++;
-                    
+
                 }
                 doc.select(".choises-panel").append("<script>$(\".choises-panel li\").click(function(){\n" +
                         "$('html, body').animate({\n" +
-"        scrollTop: $('.searchboxInc-'+$(this).find(\".aspect-li\").html().replace(/[^a-zA-Z0-9]+/g, \"\")).offset().top\n" +
-"    }, 2000);"+
-"        $('.box-top-5').removeClass('box-top-5-hi'); \n $('.searchboxInc-'+$(this).find(\".aspect-li\").html().replace(/[^a-zA-Z0-9]+/g, \"\")).addClass('box-top-5-hi');" +
-"    });</script>");
+                        "        scrollTop: $('.searchboxInc-'+$(this).find(\".aspect-li\").html().replace(/[^a-zA-Z0-9]+/g, \"\")).offset().top\n" +
+                        "    }, 2000);" +
+                        "        $('.box-top-5').removeClass('box-top-5-hi'); \n $('.searchboxInc-'+$(this).find(\".aspect-li\").html().replace(/[^a-zA-Z0-9]+/g, \"\")).addClass('box-top-5-hi');" +
+                        "    });</script>");
                 for (HotelRankBean ending : Combined) {
 
                     containsNameRank(Combined, ending.getHote().getHotel().getHotelUrl(), ending.getHoteAspectScore(), ending.getHotelAspect(), end, ending.getHote());
@@ -381,7 +382,7 @@ doc.getElementById("hotellist_inner").append("<div class='block-header-criteria 
                 doc.append("<form id='DeleteOptions' action='UrlContoller?action=DeleteOptionsSort' method='post'></form>");
             } else {
                 doc.getElementById("hotellist_inner").append("<div class='block-header-criteria text-center'><div class='row'><div class='col-sm-12'><div class='choises-panel'><h3 > The best choises sorted based on your criteria :</h3><ul></ul></div></div></div><div class='row'><div class='col-sm-12'><button id=\"opensortoptionbutton\" class=\"sort_option_avoid \"><span>Change your criteria</span></button></div></div><div class='row'><div class='col-sm-12'><button id=\"opensortoptionbutton_delete\" class=\"sort_option_avoid_delete \"><span><i class=\"far fa-trash-alt\"></i>\n" +
-"Delete your options</span></button></div></div></div>");
+                        "Delete your options</span></button></div></div></div>");
 
                 for (String aspe : Filtetrs.keySet()) {
                     LinkedList<HotelRankBean> get = AspectMAps.get(aspe);
@@ -391,12 +392,12 @@ doc.getElementById("hotellist_inner").append("<div class='block-header-criteria 
                         System.out.println("Before " + sorted.getHote().getHotel().getHoteName() + " --- " + sorted.getHotelAspect() + "-----" + sorted.getHoteAspectScore());
                         // doc.getElementById("hotellist_inner").append(sorted.getHote().getDiv());
                     }
-                   doc.select(".choises-panel").select("ul").append("<li class='list-inline-item'><span class='aspect-li'>" + aspe + "</span><span class='range-li'> - " + Filtetrs.get(aspe) + "%</span></li>");
+                    doc.select(".choises-panel").select("ul").append("<li class='list-inline-item'><span class='aspect-li'>" + aspe + "</span><span class='range-li'> - " + Filtetrs.get(aspe) + "%</span></li>");
 
                 }
                 doc.select(".choises-panel").append("<script>$(\".choises-panel li\").click(function(){\n" +
-"       \n" +
-"    });</script>");
+                        "       \n" +
+                        "    });</script>");
                 Collections.sort(Combined, Collections.reverseOrder());
 
                 for (HotelRankBean beani : Combined) {
